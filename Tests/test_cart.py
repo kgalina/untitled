@@ -47,6 +47,7 @@ class TestCart:
         # Проверка наличия текста "Готовые к заказу" на странице корзины
         ready = self.driver.find_element_by_xpath(".//*[@class='wrap_li']")
         assert_that(ready.text, contains_string('Готовые к заказу'))
+        djfkfdjkfjdk
 
 
 
