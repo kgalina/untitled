@@ -1,14 +1,12 @@
 from time import sleep
 
-import  pytest
+import pytest
 from hamcrest import assert_that, contains_string, equal_to
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
 class TestCart:
-
-
 
     def test_one_item_page(self, setup):
         """
@@ -36,7 +34,7 @@ class TestCart:
 
         add_to_cart.click()
 
-        sleep(4)
+        sleep(6)
         open_cart  = self.driver.find_element_by_xpath(".//*[@id='basket_form']/..//span[text() = 'Перейти в корзину']")
         open_cart.click()
         sleep(4)
@@ -48,15 +46,15 @@ class TestCart:
         ready = self.driver.find_element_by_xpath(".//*[@class='wrap_li']")
         assert_that(ready.text, contains_string('Готовые к заказу'))
 
-
-
     @pytest.fixture(scope='function')
     def setup(self):
         global search_input
         search_input = 'title-search-input2'
 
-        self.driver = webdriver.Firefox()
-        self.driver.maximize_window()
+        self.driver = webdriver.Chrome(executable_path='/Applications/Python 3.5/chromedriver')
+        self.driver.set_window_size(1280, 1080)
+
+        # self.driver.maximize_window()
 
     def teardown(self):
         self.driver.close()

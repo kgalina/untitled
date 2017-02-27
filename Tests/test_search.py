@@ -1,6 +1,6 @@
 from time import sleep
 
-import  pytest
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -26,16 +26,13 @@ class TestSearch:
         sleep(5)
         assert "Сожалеем, но ничего не найдено." in self.driver.page_source
 
-
-
-
     @pytest.fixture(scope='function')
     def setup(self):
+        self.driver = webdriver.Chrome(executable_path='/Applications/Python 3.5/chromedriver')
+
         global search_input
         search_input = 'title-search-input2'
-
-        self.driver = webdriver.Firefox()
-        self.driver.maximize_window()
+        self.driver.set_window_size(1280, 1080)
 
     def teardown(self):
         self.driver.close()
