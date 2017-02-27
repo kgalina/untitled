@@ -54,7 +54,7 @@ class TestCart:
         self.driver = webdriver.Chrome(executable_path='/Applications/Python 3.5/chromedriver')
         self.driver.set_window_size(1280, 1080)
 
-        self.driver.maximize_window()
+        # self.driver.maximize_window()
 
     def teardown(self):
         self.driver.close()
