@@ -52,8 +52,7 @@ class TestCart:
         search_input = 'title-search-input2'
 
         self.driver = webdriver.Chrome(executable_path='/Applications/Python 3.5/chromedriver')
-        self.driver.set_window_size(1280, 1080)
-
+        # self.driver.set_window_size(1280, 1080)
         # self.driver.maximize_window()
 
     def teardown(self):

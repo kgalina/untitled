@@ -32,7 +32,7 @@ class TestSearch:
 
         global search_input
         search_input = 'title-search-input2'
-        self.driver.set_window_size(1280, 1080)
+        # self.driver.set_window_size(1280, 1080)
 
     def teardown(self):
         self.driver.close()
